@@ -1,4 +1,5 @@
 import telebot
+import os
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 """
@@ -13,8 +14,8 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 🔹 Made by: @ClientName
 """
 
-# Replace with your actual bot token
-bot = telebot.TeleBot("YourBotTokenHere")
+
+bot = telebot.TeleBot(os.getenv("7511000335:AAHCZz4yP6BhZxoKGOksndgSYg6Oy1WtAVQ"))
 
 # Define Admin IDs
 admin_ids = [YourAdminIDHere]  # Add more admin IDs as needed
