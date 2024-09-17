@@ -1,0 +1,31 @@
+name: Run Telegram Bot Every 48 Hours
+
+on:
+  schedule:
+    - cron: '0 */48 * * *'  # Run every 48 hours
+  workflow_dispatch:         # Allow manual running via the "Run workflow" button
+
+jobs:
+  run-telegram-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: |
+          if [ -f requirements.txt ]; then
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+          fi
+
+      - name: Run Telegram bot script
+        run: python bot.py
+        env:
+          API_TOKEN: ${{ secrets.BOT_API_TOKEN }}
