@@ -18,7 +18,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 bot = telebot.TeleBot(os.getenv("7511000335:AAHCZz4yP6BhZxoKGOksndgSYg6Oy1WtAVQ"))
 
 # Define Admin IDs
-admin_ids = [YourAdminIDHere]  # Add more admin IDs as needed
+admin_ids = [1824621252]  # Add more admin IDs as needed
 
 # To keep track of what we're asking from the admin
 upload_states = {}
